@@ -1,0 +1,35 @@
+<div class="global-styles">
+      <div class="html w-embed">
+        <style>
+/* Max Font Size */
+@media screen and (min-width:1400px) {
+ body {font-size: 0.875rem;}
+}
+/* Main Variables */
+:root {
+  --main-dark: black;
+  --main-light: white;
+}
+/* Global Styles */
+::selection {
+	background: var(--main-dark);
+  color: var(--main-light);
+  text-shadow: none;
+}
+img::selection, svg::selection {
+	background: transparent;
+}
+/* Link color inherits from parent font color  */
+a {
+	color: inherit;
+}
+/* Project CSS */
+.swiper-slide.is-photos {
+	display: none;
+}
+.swiper-slide.is-photos:first-child {
+	display: block;
+}
+</style>
+      </div>
+    </div>

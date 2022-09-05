@@ -18,19 +18,10 @@
   <link href="{{ settings.site.favicon | default: "/assets/images/favicon.ico" }}" rel="shortcut icon" type="image/x-icon">
   <link href="{{ settings.site.apple_touch_icon | default: "/assets/images/webclip.png" }}" rel="apple-touch-icon">
   <script src="https://unpkg.com/netlify-cms@^2.0.0/dist/netlify-cms.js"></script>
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@8/swiper-bundle.min.css">
+  <script src="https://cdn.jsdelivr.net/npm/swiper@8/swiper-bundle.min.js"></script>
   <style>
-body .swiper-slide.is-photos {
-	display: block !important;
-}
-</style>
-{{ settings.site.header_additional_content }}{%- include "partials/_site-css-variables" -%}<script src="https://identity.netlify.com/v1/netlify-identity-widget.js"></script><style>.w-video.w-embed {
-            aspect-ratio: 16 / 9;
-        }</style></head>
-<body>
-  <div class="page-wrapper">
-    <div class="global-styles">
-      <div class="html w-embed">
-        <style>
+  <style>
 /* Max Font Size */
 @media screen and (min-width:1400px) {
  body {font-size: 0.875rem;}
@@ -61,31 +52,40 @@ a {
 	display: block;
 }
 </style>
-      </div>
-    </div>
+  <style>
+body .swiper-slide.is-photos {
+	display: block !important;
+}
+</style>
+{{ settings.site.header_additional_content }}{%- include "partials/_site-css-variables" -%}<script src="https://identity.netlify.com/v1/netlify-identity-widget.js"></script><style>.w-video.w-embed {
+            aspect-ratio: 16 / 9;
+        }</style></head>
+<body>
+  <div class="page-wrapper">
+    {%- include "partials/global-styles" -%}
     <main class="main-wrapper">
       <section class="section">
         <div class="container is-slider">
           <div class="slider_wrap">
             <div class="slider_left">
-              <div class="swiper is-content w-dyn-list">
-                <div role="list" class="swiper-wrapper is-content w-dyn-items">
-                  <div role="listitem" class="swiper-slide is-content w-dyn-item">
+              {%- assign collection = collections.items | sort: "-created-on" -%}<div class="swiper is-content w-dyn-list">
+                {%- unless collection.length == 0 -%}<div role="list" class="swiper-wrapper is-content w-dyn-items">
+                  {%- for item in collection -%}<div role="listitem" class="swiper-slide is-content w-dyn-item">
                     <div class="slider_info-top">
                       <p class="slider_tagline">{{ texts.4127e305 }}</p>
                       <div class="slider_title">
-                        <p class="slider_title-text"></p>
+                        <p class="slider_title-text">{{ item.data.title }}</p>
                       </div>
                     </div>
                     <div class="slider_info-middle">
-                      <p class="slider_info-text"></p>
+                      <p class="slider_info-text">{{ item.data.f_quote }}</p>
                     </div>
                     <div class="slider_info-bottom"></div>
-                  </div>
-                </div>
-                <div class="w-dyn-empty">
+                  </div>{%- endfor -%}
+                </div>{%- endunless -%}
+                {%- if collection.length == 0 -%}<div class="w-dyn-empty">
                   <div>{{ texts.3d503d2b }}</div>
-                </div>
+                </div>{%- endif -%}
               </div>
               <div class="arrows">
                 <a href="{{ links.23 }}" class="arrow is-left w-inline-block">
@@ -101,15 +101,15 @@ a {
               </div>
             </div>
             <div class="slider_right">
-              <div class="swiper is-photos w-dyn-list">
-                <div role="list" class="swiper-wrapper is-photos w-dyn-items">
-                  <div role="listitem" class="swiper-slide is-photos w-dyn-item">
+              {%- assign collection = collections.items | sort: "-created-on" -%}<div class="swiper is-photos w-dyn-list">
+                {%- unless collection.length == 0 -%}<div role="list" class="swiper-wrapper is-photos w-dyn-items">
+                  {%- for item in collection -%}<div role="listitem" class="swiper-slide is-photos w-dyn-item" style="background-image: url('{{item.data.f_photo.url}}');">
                     <div class="slider_height"></div>
-                  </div>
-                </div>
-                <div class="w-dyn-empty">
+                  </div>{%- endfor -%}
+                </div>{%- endunless -%}
+                {%- if collection.length == 0 -%}<div class="w-dyn-empty">
                   <div>{{ texts.3d503d2b }}</div>
-                </div>
+                </div>{%- endif -%}
               </div>
             </div>
           </div>

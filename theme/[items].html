@@ -12,6 +12,40 @@
   <link href="{{ settings.site.favicon | default: "/assets/images/favicon.ico" }}" rel="shortcut icon" type="image/x-icon">
   <link href="{{ settings.site.apple_touch_icon | default: "/assets/images/webclip.png" }}" rel="apple-touch-icon">
   <script src="https://unpkg.com/netlify-cms@^2.0.0/dist/netlify-cms.js"></script>
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@8/swiper-bundle.min.css">
+  <script src="https://cdn.jsdelivr.net/npm/swiper@8/swiper-bundle.min.js"></script>
+  <style>
+  <style>
+/* Max Font Size */
+@media screen and (min-width:1400px) {
+ body {font-size: 0.875rem;}
+}
+/* Main Variables */
+:root {
+  --main-dark: black;
+  --main-light: white;
+}
+/* Global Styles */
+::selection {
+	background: var(--main-dark);
+  color: var(--main-light);
+  text-shadow: none;
+}
+img::selection, svg::selection {
+	background: transparent;
+}
+/* Link color inherits from parent font color  */
+a {
+	color: inherit;
+}
+/* Project CSS */
+.swiper-slide.is-photos {
+	display: none;
+}
+.swiper-slide.is-photos:first-child {
+	display: block;
+}
+</style>
 {{ settings.site.header_additional_content }}{%- include "partials/_site-css-variables" -%}<style>.w-video.w-embed {
             aspect-ratio: 16 / 9;
         }</style></head>
