@@ -6,8 +6,9 @@ published-on: 2022-09-05T12:04:56.626Z
 f_photo:
   url: https://uploads-ssl.webflow.com/6315e37ee5a496d3a1c495a6/6315e5dbbfb65a4e878e7c7c_3dhero.jpg
   alt: null
-f_quote: Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam
-  nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam.
+f_quote: Direct Pay Designer Discount. Preview Before Large Purchase. Atomic NFT
+  contract. Progress and Milestone. Personalized CMS/with invitation to edit
+  access.
 layout: "[items].html"
 slug: collaborative-workflow
 tags: items
