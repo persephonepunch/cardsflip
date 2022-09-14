@@ -1,5 +1,5 @@
 ---
-title: Custom Order Furniture
+title: You can upload and tag images with SEO
 created-on: 2022-06-30T15:58:29.247Z
 updated-on: 2022-09-05T12:04:45.520Z
 published-on: 2022-09-05T12:04:56.626Z
