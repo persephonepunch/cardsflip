@@ -1,5 +1,5 @@
 ---
-title: Going to the Store
+title: Your mom is cool
 created-on: 2022-09-19T18:23:11.516Z
 updated-on: 2022-09-19T18:23:11.529Z
 published-on: 2022-09-19T18:23:11.538Z
